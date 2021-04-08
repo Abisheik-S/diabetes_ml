@@ -17,14 +17,14 @@ def main():
     """
     danger="""<h1 style="color:red;text-align:center;">You Are Unsafe !!</h1>"""
     st.markdown(html_temp,unsafe_allow_html=True)
-    BMI = st.text_input('Enter your BMI here')
+    BMI = st.text_input('Enter your BMI here (kg/m^2)')
     Gl=st.text_input('Enter your Glucose here')
-    Bp=st.text_input('Enter your BloodPressure here')
-    Age=st.text_input('Enter your Age here')
-    ST=st.text_input('Enter your Skin Thickness here')
-    preg=st.text_input('Enter your No. of pregnencies here')
-    dpf=st.text_input('Enter your Dpf here')
-    insulin=st.text_input('Enter your insulin here')
+    Bp=st.text_input('Enter your Diastolic BloodPressure here (mm Hg')
+    Age=st.text_input('Enter your Age here (years)')
+    ST=st.text_input('Enter your Skin Thickness here (mm)')
+    preg=st.text_input('Enter your No. of pregnancies here')
+    dpf=st.text_input('Enter your Diabetes Pedigree Function  here')
+    insulin=st.text_input('Enter your insulin here (mu U/ml)')
     if st.button("predict"):
         a=pd.DataFrame({'Pregnancies':preg, 'Glucose':Gl, 'BloodPressure':Bp, 'SkinThickness':ST, 'Insulin':insulin,
        'BMI':BMI, 'DiabetesPedigreeFunction':dpf, 'Age':Age},index=[0])
