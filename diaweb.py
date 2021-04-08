@@ -19,7 +19,7 @@ def main():
     st.markdown(html_temp,unsafe_allow_html=True)
     BMI = st.text_input('Enter your BMI here (kg/m^2)')
     Gl=st.text_input('Enter your Glucose here (mmol/L)')
-    Bp=st.text_input('Enter your Diastolic BloodPressure here (mm Hg')
+    Bp=st.text_input('Enter your Diastolic BloodPressure here (mm Hg)')
     Age=st.text_input('Enter your Age here (years)')
     ST=st.text_input('Enter your Skin Thickness here (mm)')
     preg=st.text_input('Enter your No. of pregnancies here')
