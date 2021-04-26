@@ -16,6 +16,7 @@ def main():
     safe="""<h1 style="color:green;text-align:center;">You Are Safe!!</h1> 
     """
     danger="""<h1 style="color:red;text-align:center;">You Are Unsafe !!</h1>"""
+    nnn="""<h1 style="color:blue;text-align:center;">Please enter some values , all fields can't be 0 !!</h1>"""
     st.markdown(html_temp,unsafe_allow_html=True)
     BMI = st.text_input('Enter your BMI here (kg/m^2)')
     Gl=st.text_input('Enter your Glucose here (mg/dL)')
@@ -29,6 +30,8 @@ def main():
         a=pd.DataFrame({'Pregnancies':preg, 'Glucose':Gl, 'BloodPressure':Bp, 'SkinThickness':ST, 'Insulin':insulin,
        'BMI':BMI, 'DiabetesPedigreeFunction':dpf, 'Age':Age},index=[0])
         output=model.predict(a)
+        if a['Pregnancies']=='0' and a['Glucose']=='0' and a['BloodPressure']=='0' and a['SkinThickness']=='0' and a['Insulin']=='0' and a['BMI']=='0' and a['DiabetesPedigreeFunction']=='0' and a['Age']=='0':
+            st.markdown(nnn,unsafe_allow_html=True)
         if(output==0):
             st.markdown(safe,unsafe_allow_html=True)
         else:
