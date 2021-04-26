@@ -30,7 +30,7 @@ def main():
         a=pd.DataFrame({'Pregnancies':preg, 'Glucose':Gl, 'BloodPressure':Bp, 'SkinThickness':ST, 'Insulin':insulin,
        'BMI':BMI, 'DiabetesPedigreeFunction':dpf, 'Age':Age},index=[0])
         output=model.predict(a)
-        if (a['row']== 0).all():
+        if (a['col']== 0).all():
             st.markdown(nnn,unsafe_allow_html=True)
         if(output==0):
             st.markdown(safe,unsafe_allow_html=True)
